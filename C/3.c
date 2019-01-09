@@ -36,7 +36,7 @@ int main(){
 	int a=1,b=2;
 	int *p1=&a, *p2=&b;
 	swap(p1,p2);
-	printf("a=%d,b=%d\n",a,b);
+	printf("a=%d,b=%d\n",*p1,*p2);
 	return 0;
 }
 
