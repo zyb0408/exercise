@@ -20,8 +20,7 @@ int* temp = &x;
 将temp的地址固定下来，便面发生错误即可
 */
 
-
-//错误写法2
+//错误写法2···
 void swap2(int* a,int* b){
 	int* temp = a;
 	a = b;
