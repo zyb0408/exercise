@@ -20,8 +20,7 @@ int* temp = &x;
 将temp的地址固定下来，便面发生错误即可
 */
 
-
-//错误写法2
+//错误写法2···
 void swap2(int* a,int* b){
 	int* temp = a;
 	a = b;
@@ -36,7 +35,7 @@ int main(){
 	int a=1,b=2;
 	int *p1=&a, *p2=&b;
 	swap(p1,p2);
-	printf("a=%d,b=%d\n",a,b);
+	printf("a=%d,b=%d\n",*p1,*p2);
 	return 0;
 }
 
