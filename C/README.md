@@ -39,3 +39,74 @@ scanf("%d",&a[i]);//与scanf("%d",a+i);一样的效果。
 ```
 ## 引用
 * 引用不产生副本，引用是别名，对引用变量的操作就是对原变量的操作。引用的使用很简单，就在变量的前面加个`*`即可。
+
+在代码中遇到引用不能够理解的时候，可以先将&去掉再理解。看看原来的含义是什么。
+
+
+## 结构体
+
+### 定义
+
+形式：
+```
+struct Name{
+	//一些基本的数据结构或者自定义的数据类型	
+};
+```
+例子：
+```
+struct stuInfo{
+	int id;
+	char gender; //'F' or 'M'
+	char name[20];
+	cahr major[20];
+}Alice,Bob,stu[100];
+```
+说明：
+> stuInfo:这个结构体的类型名
+	> 内部属性：id,gender,name,major
+Alice,Bob是结构体的两个变量。
+
+
+** 结构体内部不能定义自身（这样会引起循环定义的问题），但是可以定义自身类型的指针变量。**
+例子：
+```
+struct node{
+	node n;//这句话是不对的
+	node *next;//可以定义node*型的指针变量
+};
+```
+### 结构体初始化
+内部有个构造函数，默认存在，也可以显示写出来。
+默认的构造函数如下：
+```
+struct stuInfo{
+	int id;
+	char gender;
+	stuInfo(){}		//这个就是默认的构造函数，用来初始化结构体的
+};
+```
+上面的构造函数，里面啥也没有。
+
+下面这个例子是使用默认参数初始化结构体：
+```
+struct stuInfo{
+	int id;
+	cahr gender;
+	stuInfo(int _id,char _gender){
+		//赋值
+		id = _id;
+		gender = _gender;
+	}
+
+	/*
+	构造函数简化成一行的写法：
+	stuInfo(int _id,char _gender): id(_id),gender(_gender){}
+	*/
+};
+```
+### 初始化赋值
+这样就可以直接对结构一体变量进行赋值了。
+```
+stuInfo stu1 = stuInfo(10086,'M');
+```
